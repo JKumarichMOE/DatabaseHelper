@@ -2,3 +2,4 @@
 
 export(connect_db)
 importFrom(DBI,dbConnect)
+importFrom(odbc,odbc)
