@@ -15,9 +15,9 @@
 #' @importFrom odbc odbc
 #'
 #' @examples
-#' connect_db()
-#' connect_db(server="learnerbds.db.moe.govt.nz", database="LearnerBDS")
-connect_db <- function(server="learnerbds.db.moe.govt.nz", database="LearnerBDS") {
+#' dbConnect()
+#' dbConnect(server="learnerbds.db.moe.govt.nz", database="LearnerBDS")
+dbConnect <- function(server="learnerbds.db.moe.govt.nz", database="LearnerBDS") {
   conn <- tryCatch({
     DBI::dbConnect(
       odbc::odbc(),
