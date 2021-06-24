@@ -28,7 +28,7 @@ connect_db <- function(server="learnerbds.db.moe.govt.nz", database="LearnerBDS"
   }, error = function(cond) {
     message(
       paste0(
-        'Error connecting to database: \n    Server = ', server, '\n    Database = ', database
+        'Error connecting to database: \n    Server = ', server, '\n    Database = ', database, '\n'
       )
     )
     message(cond)
