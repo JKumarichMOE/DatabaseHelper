@@ -11,11 +11,13 @@
 #'
 #' @return
 #' @export
+#' @importFrom DBI dbConnect
+#' @importFrom odbc odbc
 #'
 #' @examples
-#' connect_db()
-#' connect_db(server="learnerbds.db.moe.govt.nz", database="LearnerBDS")
-connect_db <- function(server="learnerbds.db.moe.govt.nz", database="LearnerBDS") {
+#' dbConnect()
+#' dbConnect(server="learnerbds.db.moe.govt.nz", database="LearnerBDS")
+dbConnect <- function(server="learnerbds.db.moe.govt.nz", database="LearnerBDS") {
   conn <- tryCatch({
     DBI::dbConnect(
       odbc::odbc(),
@@ -26,7 +28,7 @@ connect_db <- function(server="learnerbds.db.moe.govt.nz", database="LearnerBDS"
   }, error = function(cond) {
     message(
       paste0(
-        'Error connecting to database: \n    Server = ', server, '\n    Database = ', database
+        'Error connecting to database: \n    Server = ', server, '\n    Database = ', database, '\n'
       )
     )
     message(cond)
