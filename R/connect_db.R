@@ -11,6 +11,8 @@
 #'
 #' @return
 #' @export
+#' @importFrom DBI dbConnect
+#' @importFrom odbc odbc
 #'
 #' @examples
 #' connect_db()
