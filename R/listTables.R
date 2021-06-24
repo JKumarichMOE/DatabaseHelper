@@ -42,6 +42,8 @@ listDatabaseTables <- function(connection, databaseName="LearnerBDS", schema="db
 #' @importFrom odbc odbcListColumns
 #'
 #' @examples
+#' listTableColumnNames(conn, 'Gender')
+#' listTableColumnNames(conn, 'MyTableName', databaseName='MyDatabase', schema='dbo')
 listTableColumnNames <- function(connection, tableName, databaseName="LearnerBDS", schema="dbo") {
   return(odbc::odbcListColumns(conn, catalog=databaseName, schema=schema, table=tableName))
 }
